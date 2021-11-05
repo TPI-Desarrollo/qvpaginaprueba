@@ -63,12 +63,21 @@ var asesores = [{
 }, {
   img: "1-ja.png",
   nombre: "John F. Acuña",
-  rol: "profesor facultad de ingenieria",
+  rol: "Profesor Facultad de Ingeniería",
   desc: "Profesional de la ingeniería Agrícola, con estudios de maestría en estructuras y doctorado en mecanización y tecnología agraria, con 24 años de experiencia docente en el área de construcciones agrícolas (infraestructura rural y bioclimática). Director y participante en proyectos de consultoría, investigación y transferencia de tecnología a nivel nacional e internacional. Un hombre feliz, decidido y exitoso. Líder que busca soluciones a los retos a los que me enfrento. Analítico, organizado, colaborativo y en constante aprendizaje. Apasionado por la investigación aplicada y la docencia, buscando el bienestar de quienes me rodean en diferentes entornos.",
   campo: "Ingenieria Agricola",
   costo: 500,
   nombreMon: "David Andrés Niño",
   correoMon: "daninom@unal.edu.co"
+}, {
+  img: "1-ah.jpeg",
+  nombre: "Alfonso Herrera Jiménez",
+  rol: "Profesor Facultad de Ingeniería",
+  desc: "Ingeniero de sistemas de la Universidad Nacional de Colombia. Candidato a Doctor en administración de la Universidad San Pablo CEU de Madrid (España). Especialista en Administración y Finanzas. Especialista en Alta Capacidad UNED en Madrid (España). Gerente Financiero y Administrativo Aseo Capital. Gerente Financiero y Administrativo ECSA. Gerente de Sistemas de Laboratorios Chalver Farmacéutica. Director de Sistemas Revista Cromos. Jefe de Auditoría de Sistemas Contraloría de Bogotá. Docente Universidad Nacional: cátedras de Gerencia de Proyectos y Gerencia de Empresa. Docente Universidad EAN: especialización y maestría en pensamiento estratégico. Docente Universidad de San Buenaventura: Cátedra de gestión de la responsabilidad social empresarial.",
+  campo: "Ingeniería de Sistemas",
+  costo: 500,
+  nombreMon: "Alfonso Herrera",
+  correoMon: ""
 }];
 
 var Modal = function Modal() {
