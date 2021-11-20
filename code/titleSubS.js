@@ -17,6 +17,7 @@ const styles = {
 const data = {
 		LOBBY: [ 'Tus Tareas inician aqui', './imgs/subsection/lobby.png', 100 ], 
 		ASESORES: [ 'Aqui Resuelves todas tus dudas', './imgs/subsection/asesor.png', 55 ],
+		REUNIONES: [ 'Webinars para todos', './imgs/subsection/reun.png', 55 ],
 }
 
 const Subsection = ({dataset}) => {
@@ -33,7 +34,7 @@ const Subsection = ({dataset}) => {
 						<p className="subtext">{data[title][0]}</p>
 					</div>
 				</div>
-				<img className="back-button" src={'./imgs/sources/atras.png'} onClick={() => goBack()}/>
+				<a href="comunes.html"><img className="back-button" src={'./imgs/sources/atras.png'}/></a>
 			</div>
 	);
 }
