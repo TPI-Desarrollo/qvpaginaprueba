@@ -1,33 +1,29 @@
 var container = document.querySelector('.webinar-carousel');
 
 var data = [[{
-	n: 4,
-	name: 'Nombre Webinar 4',
-	expo: 'expositor 4',
+	n: 2,
+	name: 'Pasos clave para emprender con exito',
+	expo: 'Luis Felipe Batero',
 	date: '24 Noviembre 2021',
-	link: '#',
+	link: {
+		dos: 'https://forms.gle/VqqMmdLCB2wJF2oLA',
+		cuatro: 'https://forms.gle/VqqMmdLCB2wJF2oLA'
+	},
 	state: 'prox'
 }, {
-	n: 3,
-	name: 'Nombre Webinar 3',
-	expo: 'expositor 3',
-	link: '#',
-	state: 'pass'
-}], [{
-	n: 2,
-	name: 'Nombre Webinar 2',
-	expo: 'expositor 2',
-	link: '#',
-	state: 'pass'
-}, {
 	n: 1,
-	name: 'Nombre Webinar 1',
-	expo: 'expositor 1',
-	link: '#',
+	name: 'Innovación en iluminación y alumbrado',
+	expo: 'Mario Quiroga',
+	date: '17 Noviembre 2021',
+	link: {
+		dos: 'https://campus.virtual.unal.edu.co/mod/url/view.php?id=700382',
+		cuatro: 'https://campus.virtual.unal.edu.co/mod/url/view.php?id=700611'
+	},
 	state: 'pass'
 }]];
 var WebinarCard = function WebinarCard(_ref) {
-	var item = _ref.item;
+	var item = _ref.item,
+	    group = _ref.group;
 
 	return React.createElement(
 		'div',
@@ -38,7 +34,7 @@ var WebinarCard = function WebinarCard(_ref) {
 				{ key: i.name, className: 'webinar-card-cont' },
 				i.state === 'prox' ? React.createElement(
 					'a',
-					{ href: i.link, target: '_blank' },
+					{ href: i.link[group], target: '_blank' },
 					React.createElement(
 						'div',
 						{ className: 'webinar-card webinar-prox' },
@@ -55,7 +51,7 @@ var WebinarCard = function WebinarCard(_ref) {
 					)
 				) : React.createElement(
 					'a',
-					{ href: i.link, target: '_blank' },
+					{ href: i.link[group], target: '_blank' },
 					React.createElement('img', { src: 'imgs/webinars/' + i.n + '.png', className: 'webinar-card' })
 				),
 				React.createElement(
@@ -93,9 +89,43 @@ var WebinarCarousel = function WebinarCarousel() {
 		localStorage.setItem("webinar-slide", num.toString());
 		location.reload();
 	};
+
+	var gr = localStorage.getItem("data-grupo-sel");
+	var group = gr ? gr : 'dos';
+	var setGroup = function setGroup(grp) {
+		localStorage.setItem("data-grupo-sel", grp);
+		location.reload();
+	};
+
 	return React.createElement(
 		'div',
 		{ className: 'carousel-container' },
+		React.createElement(
+			'div',
+			{ className: 'grp-sel-cont' },
+			group === 'dos' ? React.createElement(
+				'div',
+				{ className: 'grupo-sel grp-selected' },
+				'Horario 2 - 4 pm'
+			) : React.createElement(
+				'div',
+				{ className: 'grupo-sel', onClick: function onClick() {
+						return setGroup('dos');
+					} },
+				'Horario 2 - 4 pm'
+			),
+			group === 'cuatro' ? React.createElement(
+				'div',
+				{ className: 'grupo-sel grp-selected' },
+				'Horario 4 - 6 pm'
+			) : React.createElement(
+				'div',
+				{ className: 'grupo-sel', onClick: function onClick() {
+						return setGroup('cuatro');
+					} },
+				'Horario 4 - 6 pm'
+			)
+		),
 		React.createElement(
 			'div',
 			{ className: 'carousel-select' },
@@ -122,7 +152,11 @@ var WebinarCarousel = function WebinarCarousel() {
 			)
 		),
 		data.map(function (slide, index) {
-			return slideNum === index.toString() ? React.createElement(WebinarCard, { key: 'sld' + index, item: slide }) : null;
+			return slideNum === index.toString() ? React.createElement(WebinarCard, {
+				key: 'sld' + index,
+				item: slide,
+				group: group
+			}) : null;
 		})
 	);
 };
