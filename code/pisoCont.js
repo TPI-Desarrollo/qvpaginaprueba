@@ -25,7 +25,9 @@ const data = {
 			entrega: [
 				['POSIBLES SOLUCIONES / INFOGRAFIA', 'https://campus.virtual.unal.edu.co/mod/assign/view.php?id=700231'],
 			],
-			guia: [],
+			guia: [
+				['ENTREGABLE ASUNTOS DE GÉNERO','https://campus.virtual.unal.edu.co/mod/assign/view.php?id=755593']
+			],
 		},
 		4 : {
 			entrega: [
@@ -79,7 +81,9 @@ const data = {
 			entrega: [
 				['POSIBLES SOLUCIONES / INFOGRAFIA', 'https://campus.virtual.unal.edu.co/mod/assign/view.php?id=700465'],
 			],
-			guia: [],
+			guia: [
+				['ENTREGABLE ASUNTOS DE GÉNERO','https://campus.virtual.unal.edu.co/mod/assign/view.php?id=755594']
+			],
 		},
 		4 : {
 			entrega: [

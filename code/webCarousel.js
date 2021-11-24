@@ -4,23 +4,23 @@ const data = [
 	[
 	{
 		n: 2,
-		name: 'Pasos clave para emprender con exito',
-		expo: 'Luis Felipe Batero',
-		date: '24 Noviembre 2021',
+		name: 'Crea una propuesta de valor desde el cliente y encuentra recursos para financiarla.',
+		expo: 'Competir en el mercado requiere de múltiples aspectos fundamentales relacionados con la orientación al cliente y la planificación detallada de la idea de negocio.',
+		date: '2021-1',
 		link: {
-			dos: 'https://forms.gle/VqqMmdLCB2wJF2oLA',
-			cuatro: 'https://forms.gle/VqqMmdLCB2wJF2oLA'
+			dos: 'https://campus.virtual.unal.edu.co/mod/url/view.php?id=756480',
+			cuatro: 'https://campus.virtual.unal.edu.co/mod/url/view.php?id=756497'
 		},
-		state: 'prox'
+		state: 'pass'
 	},
 	{
 		n: 1,
-		name: 'Innovación en iluminación y alumbrado',
-		expo: 'Mario Quiroga',
-		date: '17 Noviembre 2021',
+		name: 'Contexto de innovación y economía circular',
+		expo: 'Conoce el la posición de Colombia en el panorama internacional de la Ciencia, Tecnología e Innovación',
+		date: '2021-1',
 		link: {
-			dos: 'https://campus.virtual.unal.edu.co/mod/url/view.php?id=700382',
-			cuatro: 'https://campus.virtual.unal.edu.co/mod/url/view.php?id=700611'
+			dos: 'https://campus.virtual.unal.edu.co/mod/url/view.php?id=756468',
+			cuatro: 'https://campus.virtual.unal.edu.co/mod/url/view.php?id=756485'
 		},
 		state: 'pass'
 	}
@@ -39,7 +39,7 @@ const WebinarCard = ({item, group}) => {
 							</div>
 						  </a>
 						:	<a href={i.link[group]} target="_blank">
-							<img src={`imgs/webinars/${i.n}.png`} className="webinar-card"/>
+							<img src={`imgs/webinars/${i.n}.jpg`} className="webinar-card"/>
 							</a>
 					}
 					<p className="web-card-title">{i.n}. {i.name}</p>
@@ -53,8 +53,8 @@ const WebinarCard = ({item, group}) => {
 const WebinarCarousel = () => {
 	const sld = localStorage.getItem("webinar-slide")
 	const slideNum = sld ? sld : '0'
-	const setSlide = sld => {
-		localStorage.setItem("webinar-slide", sld)
+	const setSlide = sldn => {
+		localStorage.setItem("webinar-slide", sldn)
 		location.reload()
 	}
 	const nextSlide = n => {

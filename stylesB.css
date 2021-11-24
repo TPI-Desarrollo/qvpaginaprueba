@@ -1203,16 +1203,17 @@ a{
 .webinar-cards {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-	grid-gap: 15px;
+	grid-gap: 30px;
 	justify-content: center;
-	align-items: center;
+	align-items: start;
+	margin-bottom: 20px;
 }
 .webinar-card-cont {
 	width: 100%;
 }
 .webinar-card {
 	display: flex;
-	height: 200px;
+	width: 100%;
 	box-shadow: -3px 0px 20px rgba(0, 0, 0, 0.15);
 	transition: .3s ease;
 }

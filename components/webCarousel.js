@@ -2,22 +2,22 @@ var container = document.querySelector('.webinar-carousel');
 
 var data = [[{
 	n: 2,
-	name: 'Pasos clave para emprender con exito',
-	expo: 'Luis Felipe Batero',
-	date: '24 Noviembre 2021',
+	name: 'Crea una propuesta de valor desde el cliente y encuentra recursos para financiarla.',
+	expo: 'Competir en el mercado requiere de múltiples aspectos fundamentales relacionados con la orientación al cliente y la planificación detallada de la idea de negocio.',
+	date: '2021-1',
 	link: {
-		dos: 'https://forms.gle/VqqMmdLCB2wJF2oLA',
-		cuatro: 'https://forms.gle/VqqMmdLCB2wJF2oLA'
+		dos: 'https://campus.virtual.unal.edu.co/mod/url/view.php?id=756480',
+		cuatro: 'https://campus.virtual.unal.edu.co/mod/url/view.php?id=756497'
 	},
-	state: 'prox'
+	state: 'pass'
 }, {
 	n: 1,
-	name: 'Innovación en iluminación y alumbrado',
-	expo: 'Mario Quiroga',
-	date: '17 Noviembre 2021',
+	name: 'Contexto de innovación y economía circular',
+	expo: 'Conoce el la posición de Colombia en el panorama internacional de la Ciencia, Tecnología e Innovación',
+	date: '2021-1',
 	link: {
-		dos: 'https://campus.virtual.unal.edu.co/mod/url/view.php?id=700382',
-		cuatro: 'https://campus.virtual.unal.edu.co/mod/url/view.php?id=700611'
+		dos: 'https://campus.virtual.unal.edu.co/mod/url/view.php?id=756468',
+		cuatro: 'https://campus.virtual.unal.edu.co/mod/url/view.php?id=756485'
 	},
 	state: 'pass'
 }]];
@@ -52,7 +52,7 @@ var WebinarCard = function WebinarCard(_ref) {
 				) : React.createElement(
 					'a',
 					{ href: i.link[group], target: '_blank' },
-					React.createElement('img', { src: 'imgs/webinars/' + i.n + '.png', className: 'webinar-card' })
+					React.createElement('img', { src: 'imgs/webinars/' + i.n + '.jpg', className: 'webinar-card' })
 				),
 				React.createElement(
 					'p',
@@ -74,8 +74,8 @@ var WebinarCard = function WebinarCard(_ref) {
 var WebinarCarousel = function WebinarCarousel() {
 	var sld = localStorage.getItem("webinar-slide");
 	var slideNum = sld ? sld : '0';
-	var setSlide = function setSlide(sld) {
-		localStorage.setItem("webinar-slide", sld);
+	var setSlide = function setSlide(sldn) {
+		localStorage.setItem("webinar-slide", sldn);
 		location.reload();
 	};
 	var nextSlide = function nextSlide(n) {
