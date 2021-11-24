@@ -1,6 +1,6 @@
 const container = document.querySelector('.webinar-carousel')
 
-const data = [
+const dataA = [
 	[
 	{
 		n: 2,
@@ -26,7 +26,33 @@ const data = [
 	}
 	],
 ]
-const WebinarCard = ({item, group}) => {
+const data = [
+	[
+	{
+		n: 2,
+		name: 'Pasos clave para emprender',
+		expo: 'Luis Felipe Botero',
+		date: '24 Noviembre 2021',
+		link: {
+			dos: 'https://forms.gle/VqqMmdLCB2wJF2oLA',
+			cuatro: 'https://forms.gle/VqqMmdLCB2wJF2oLA'
+		},
+		state: 'prox'
+	},
+	{
+		n: 1,
+		name: 'Innovación en iluminacion y alumbrado',
+		expo: 'Mario Quiroga',
+		date: '24 Noviembre 2021',
+		link: {
+			dos: 'https://campus.virtual.unal.edu.co/mod/url/view.php?id=700382',
+			cuatro: 'https://campus.virtual.unal.edu.co/mod/url/view.php?id=700611'
+		},
+		state: 'pass'
+	},
+	]
+]
+const WebinarCard = ({item, group, t}) => {
 	return (
 		<div className="webinar-cards">
 			{item.map((i) => 
@@ -39,7 +65,7 @@ const WebinarCard = ({item, group}) => {
 							</div>
 						  </a>
 						:	<a href={i.link[group]} target="_blank">
-							<img src={`imgs/webinars/${i.n}.jpg`} className="webinar-card"/>
+							<img src={`imgs/webinars/${t}${i.n}.jpg`} className="webinar-card"/>
 							</a>
 					}
 					<p className="web-card-title">{i.n}. {i.name}</p>
@@ -62,6 +88,20 @@ const WebinarCarousel = () => {
 		if( num < 0 ){num = data.length - 1}
 		if( num == data.length ){num = 0}
 		localStorage.setItem("webinar-slide", num.toString())
+		location.reload()
+	}
+
+	const sldA = localStorage.getItem("webinar-slide-antes")
+	const slideNumA = sld ? sld : '0'
+	const setSlideA = sldn => {
+		localStorage.setItem("webinar-slide-antes", sldn)
+		location.reload()
+	}
+	const nextSlideA = n => {
+		let num = parseInt(slideNum) + n
+		if( num < 0 ){num = data.length - 1}
+		if( num == data.length ){num = 0}
+		localStorage.setItem("webinar-slide-antes", num.toString())
 		location.reload()
 	}
 
@@ -92,6 +132,15 @@ const WebinarCarousel = () => {
 						</div>
 				}
 			</div>
+			<div class="webinar-header">
+				<div class="webinar-text">
+					<h2 class="webinar-title">WEBINARS</h2>
+					<h4 class="webinar-desc">EN INNOVACION, TECNOLOGIA Y EMPRENDIMIENTO <span class="webinar-resalt">2021-2</span></h4>
+				</div>
+				<a href="https://docs.google.com/forms/d/e/1FAIpQLSdeFAWM1e4rokBcPQIzulx5ij-kmy7UkaqruEnNu3uE55JzCA/viewform" target="_blank"><div class="webinar-inscr">
+					Inscribite Aquí
+				</div></a>
+			</div>
 				<div className="carousel-select">  
 					<div className="carousel-prev" onClick={()=>nextSlide(-1)}>&#10094;</div>
 					{data.map((slide,index) =>
@@ -107,6 +156,32 @@ const WebinarCarousel = () => {
 								key={`sld${index}`} 
 								item={slide}
 								group={group}
+								t='n'
+							/>
+						: null
+				)}
+			<div class="webinar-header">
+				<div class="webinar-text">
+					<h2 class="webinar-title">WEBINARS 2021-1</h2>
+					<h4 class="webinar-desc">DE INTERES PARA EL <span class="webinar-resalt">PISO 3: IDEACION</span></h4>
+				</div>
+			</div>
+				<div className="carousel-select">  
+					<div className="carousel-prev" onClick={()=>nextSlideA(-1)}>&#10094;</div>
+					{dataA.map((slide,index) =>
+						slideNum === index.toString() 
+							? <span key={`dot${index}`} className="dot dotactive" onClick={()=>setSlideA(index.toString())}></span>
+							: <span key={`dot${index}`} className="dot" onClick={()=>setSlideA(index.toString())}></span>
+					)}
+					<div className="carousel-prev" onClick={()=>nextSlideA(1)}>&#10095;</div>
+				</div>
+				{dataA.map((slide, index) => 
+					slideNum === index.toString() 
+						? <WebinarCard  
+								key={`sld${index}`} 
+								item={slide}
+								group={group}
+								t='a'
 							/>
 						: null
 				)}

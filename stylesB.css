@@ -1206,7 +1206,7 @@ a{
 	grid-gap: 30px;
 	justify-content: center;
 	align-items: start;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 }
 .webinar-card-cont {
 	width: 100%;
@@ -1214,6 +1214,7 @@ a{
 .webinar-card {
 	display: flex;
 	width: 100%;
+	min-height: 210px;
 	box-shadow: -3px 0px 20px rgba(0, 0, 0, 0.15);
 	transition: .3s ease;
 }
