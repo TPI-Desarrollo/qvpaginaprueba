@@ -57,17 +57,16 @@ const WebinarCard = ({item, group, t}) => {
 		<div className="webinar-cards">
 			{item.map((i) => 
 				<div key={i.name} className="webinar-card-cont">
+					<a href={i.link[group]} target="_blank" className="webinar-card">
+					<img src={`imgs/webinars/${t}${i.n}.jpg`} className="webinar-card"/>
 					{i.state === 'prox'
-						? <a href={i.link[group]} target="_blank">
-							<div className="webinar-card webinar-prox">
+						?	<div className="webinar-prox">
 								<h2 className="prox-text">PROXIMAMENTE</h2>
 								<h4 className="prox-date">{i.date}</h4>
 							</div>
-						  </a>
-						:	<a href={i.link[group]} target="_blank">
-							<img src={`imgs/webinars/${t}${i.n}.jpg`} className="webinar-card"/>
-							</a>
+						:	null
 					}
+					</a>
 					<p className="web-card-title">{i.n}. {i.name}</p>
 					<p className="web-card-expo">{i.expo}</p>
 				</div>

@@ -1212,9 +1212,9 @@ a{
 	width: 100%;
 }
 .webinar-card {
+	position: relative;
 	display: flex;
 	width: 100%;
-	min-height: 210px;
 	box-shadow: -3px 0px 20px rgba(0, 0, 0, 0.15);
 	transition: .3s ease;
 }
@@ -1223,12 +1223,15 @@ a{
 	box-shadow: -3px 0px 10px rgba(0, 0, 0, 0.3);
 }
 .webinar-prox {
+	position: absolute;
+	display: flex;
 	background-color:#1920EF;
 	color: white;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	max-width: 350px;
+	width: 100%;
+	height: 100%;
 }
 .prox-text {
 	margin: 0;

@@ -54,12 +54,13 @@ var WebinarCard = function WebinarCard(_ref) {
 			return React.createElement(
 				'div',
 				{ key: i.name, className: 'webinar-card-cont' },
-				i.state === 'prox' ? React.createElement(
+				React.createElement(
 					'a',
-					{ href: i.link[group], target: '_blank' },
-					React.createElement(
+					{ href: i.link[group], target: '_blank', className: 'webinar-card' },
+					React.createElement('img', { src: 'imgs/webinars/' + t + i.n + '.jpg', className: 'webinar-card' }),
+					i.state === 'prox' ? React.createElement(
 						'div',
-						{ className: 'webinar-card webinar-prox' },
+						{ className: 'webinar-prox' },
 						React.createElement(
 							'h2',
 							{ className: 'prox-text' },
@@ -70,11 +71,7 @@ var WebinarCard = function WebinarCard(_ref) {
 							{ className: 'prox-date' },
 							i.date
 						)
-					)
-				) : React.createElement(
-					'a',
-					{ href: i.link[group], target: '_blank' },
-					React.createElement('img', { src: 'imgs/webinars/' + t + i.n + '.jpg', className: 'webinar-card' })
+					) : null
 				),
 				React.createElement(
 					'p',
